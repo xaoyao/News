@@ -16,11 +16,13 @@ public class NewsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
         Intent intent=getIntent();
+        //获取新闻链接
         String path=intent.getStringExtra("path");
 
         webView= (WebView) findViewById(R.id.wv_news);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
+        //加载网页
         webView.loadUrl(path);
     }
 }
